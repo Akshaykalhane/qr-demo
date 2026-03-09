@@ -1,0 +1,27 @@
+// mobile view
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./assets/bg-scanner.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// tablet view
+@media all and (min-width: 481px) and (max-width: 1024px) {
+  .App {
+    width: 75vw;
+    height: 90vh;
+    border-radius: 2vh;
+  }
+}
+
+// desktop view
+@media all and (min-width: 1025px) {
+  .App {
+    width: 25vw;
+    height: 90vh;
+    border-radius: 4vh;
+  }
+}

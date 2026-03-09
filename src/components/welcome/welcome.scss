@@ -1,0 +1,31 @@
+// mobile view
+.Welcome {
+  gap: 6vh;
+  .logo {
+    width: 20svh;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 3.3vh;
+  }
+}
+
+// tablet view
+@media all and (min-width: 481px) {
+  .Welcome {
+    h1 {
+      font-weight: 600;
+      font-size: 3vh;
+    }
+  }
+}
+
+// desktop view
+@media all and (min-width: 1025px) {
+  .Welcome {
+    gap: 4vh;
+    h1 {
+      font-size: 4vh;
+    }
+  }
+}

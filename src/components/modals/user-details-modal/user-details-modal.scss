@@ -1,0 +1,37 @@
+// mobile view
+.UserDetailsModal {
+  background-color: rgba(255, 255, 255, 0.6);
+  .contentWrapper {
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start !important;
+    .PeopleList {
+      border: 1px solid #ccc;
+      overflow-y: auto;
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+// tablet view
+@media all and (min-width: 481px) and (max-width: 1024px) {
+  .UserDetailsModal {
+    .contentWrapper {
+      width: 80% !important;
+      height: 80% !important;
+      border-radius: 1vh;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+// desktop view
+@media all and (min-width: 1025px) {
+  .UserDetailsModal {
+    .contentWrapper {
+      width: 50% !important;
+      height: 75% !important;
+      border-radius: 2vh;
+    }
+  }
+}
