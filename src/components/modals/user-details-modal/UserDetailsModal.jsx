@@ -119,10 +119,18 @@ export default function UserDetailsModal({ onClose, userData }) {
                 <th scope="row">Email</th>
                 <td>{userData?.email}</td>
               </tr>
-              <tr>
-                <th scope="row">Email</th>
-                <td>{userData?.age}</td>
-              </tr>
+              {userData?.phone && (
+                <tr>
+                  <th scope="row">Phone</th>
+                  <td>{userData?.phone}</td>
+                </tr>
+              )}
+              {userData?.category && (
+                <tr>
+                  <th scope="row">Category</th>
+                  <td>{userData?.category}</td>
+                </tr>
+              )}
             </tbody>
           </table>
 
