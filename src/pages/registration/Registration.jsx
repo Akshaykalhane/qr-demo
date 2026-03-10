@@ -8,6 +8,7 @@ import { uploadBase64Image } from "../../utils/uploadImg";
 import { addData } from "../../utils/addData";
 import { sendEmail } from "../../utils/sendEmail";
 import RegistrationStatusModal from "../../components/registration/Registration";
+import { checkExistingUser } from "../../utils/checkExistingUser";
 
 function generateUniqueFileName() {
   const timestamp = Date.now().toString();
@@ -36,7 +37,7 @@ export default function RegistrationPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  console.log(formData);
+  // console.log(formData);
 
   // function to generate QR code
   const generateQR = async (email) => {
@@ -80,6 +81,25 @@ export default function RegistrationPage() {
 
     if (!formData.email.includes("@") || !formData.email.includes(".")) {
       alert("Please enter a valid email address");
+      setIsUploading(false);
+      return;
+    }
+
+    // 🔹 CHECK IF USER ALREADY EXISTS
+    const { emailExists, phoneExists } = await checkExistingUser(
+      formData.email,
+      formData.phone,
+      import.meta.env.VITE_FIREBASE_QR_COL,
+    );
+
+    if (emailExists) {
+      alert("This email is already registered.");
+      setIsUploading(false);
+      return;
+    }
+
+    if (phoneExists) {
+      alert("This mobile number is already registered.");
       setIsUploading(false);
       return;
     }
