@@ -109,30 +109,32 @@ export default function UserDetailsModal({ onClose, userData }) {
           </div>
 
           {/* User details */}
-          <table className="table table-striped table-bordered bg-white w-100 mt-3">
-            <tbody>
-              <tr>
-                <th scope="row">Full Name</th>
-                <td>{userData?.fullName}</td>
-              </tr>
-              <tr>
-                <th scope="row">Email</th>
-                <td>{userData?.email}</td>
-              </tr>
-              {userData?.phone && (
+          <div className="table-responsive w-100">
+            <table className="table table-striped table-bordered bg-white w-100 mt-3">
+              <tbody>
                 <tr>
-                  <th scope="row">Phone</th>
-                  <td>{userData?.phone}</td>
+                  <th scope="row">Full Name</th>
+                  <td>{userData?.fullName}</td>
                 </tr>
-              )}
-              {userData?.category && (
                 <tr>
-                  <th scope="row">Category</th>
-                  <td>{userData?.category}</td>
+                  <th scope="row">Email</th>
+                  <td>{userData?.email}</td>
                 </tr>
-              )}
-            </tbody>
-          </table>
+                {userData?.phone && (
+                  <tr>
+                    <th scope="row">Phone</th>
+                    <td>{userData?.phone}</td>
+                  </tr>
+                )}
+                {userData?.category && (
+                  <tr>
+                    <th scope="row">Category</th>
+                    <td>{userData?.category}</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
 
           {/* No of people */}
           <section className="d-flex flex-column gap-3 mt-3 me-auto">
